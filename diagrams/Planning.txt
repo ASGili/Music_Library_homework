@@ -1,0 +1,21 @@
+#CLASSES
+
+Albums
+title: str
+genre: str
+artist: artist #class
+
+Artist 
+name: str
+
+#TABLES IN SQL
+
+Albums
+id
+title
+genre
+artist_id
+
+Artist
+id
+name
