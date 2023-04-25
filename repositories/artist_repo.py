@@ -21,3 +21,13 @@ def select(artist_id):
     if row:
         artist = Artist(row['name'],row['id'])
     return artist
+
+def select_all():
+    all_artists = []
+    sql = "SELECT * FROM artists"
+    result = run_sql(sql)
+
+    for row in result:
+        artist = Artist(row['name'],row['id']).__dict__
+        all_artists.append(artist)
+    return all_artists

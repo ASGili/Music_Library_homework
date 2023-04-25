@@ -23,3 +23,13 @@ def select(album_id):
         artist = artist_repo.select(row['artist_id'])
         album = Album(row['title'],row['genre'],artist)
     return album
+
+def select_all():
+    all_albums = []
+    sql = "SELECT * FROM albums"
+    result = run_sql(sql)
+
+    for row in result:
+        album = Album(row["title"],row['genre'],row['artist_id'],row['id']).__dict__
+        all_albums.append(album)
+    return all_albums
