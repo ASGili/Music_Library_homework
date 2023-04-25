@@ -21,4 +21,5 @@ album_repo.save(album1)
 album_repo.save(album2)
 album_repo.save(album3)
 
-
+print(artist_repo.select(artist1.id).__dict__)
+print(album_repo.select(album3.id).__dict__)

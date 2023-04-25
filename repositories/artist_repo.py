@@ -14,3 +14,10 @@ def delete_all():
     sql = "DELETE FROM artists"
     row = run_sql(sql)
     
+def select(artist_id):
+    sql = "SELECT * FROM artists WHERE id = %s"
+    values = [artist_id]
+    row = run_sql(sql, values)[0]
+    if row:
+        artist = Artist(row['name'],row['id'])
+    return artist

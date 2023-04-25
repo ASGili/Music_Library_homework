@@ -14,3 +14,12 @@ def save(album):
 def delete_all():
     sql = "DELETE FROM albums"
     row = run_sql(sql)
+
+def select(album_id):
+    sql = "SELECT * FROM albums WHERE id = %s"
+    values = [album_id]
+    row = run_sql(sql,values)[0]
+    if row:
+        artist = artist_repo.select(row['artist_id'])
+        album = Album(row['title'],row['genre'],artist)
+    return album
