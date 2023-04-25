@@ -19,3 +19,4 @@ artist_id
 Artist
 id
 name
+
